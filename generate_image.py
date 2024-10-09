@@ -8,7 +8,13 @@ def generate_image(prompt: str, ai_type: str) -> str | None:
     )
     handler = fal_client.submit(
         ai_type,
-        arguments={"prompt": translated_prompt, "enable_safety_checker": False},
+        arguments={
+            "prompt": translated_prompt,
+            "enable_safety_checker": False,
+            "guidance_scale": 3.5,
+            "num_inference_steps": 50,
+            "expand_prompt": True,
+        },
     )
     if images := handler.get().get("images"):
         return images[0].get("url")
