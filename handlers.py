@@ -88,8 +88,8 @@ async def process_prompt(
                     await message.answer_photo(
                         photo=image,
                         caption="Вот изображение по твоему запросу. \n"
-                                "Чтобы снова сгенерировать изображение, "
-                                "введи команду /generate.",
+                        "Чтобы снова сгенерировать изображение, "
+                        "введи команду /generate.",
                     )
             except Exception as error:
                 error_message = f"Error occurred in generating image: {error}"
