@@ -112,3 +112,4 @@ async def process_prompt(
         logging.exception(error_message)
         await state.clear()
         await message.answer("Произошла ошибка! Пожалуйста, попробуй ещё раз")
+    await generating_message.delete()
